@@ -3,7 +3,10 @@
     const port = 3001
     const path = require('path')
     const morgan = require('morgan')
-    require('dotenv').config()
+    if (process.env.NODE_ENV != 'production') {
+       require('dotenv').config()
+    }
+   
 
     // dış tanımlamalar
     const notFound = require('./middlewares/notFound')
