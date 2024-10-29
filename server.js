@@ -3,6 +3,8 @@
     const port = 3001
     const path = require('path')
     const morgan = require('morgan')
+    const Database = require('./db/Database')
+
     if (process.env.NODE_ENV != 'production') {
        require('dotenv').config()
     }
@@ -34,6 +36,11 @@
     app.use(notFound)
 
 
+    // Server starting and Database starting section
+
+   
+
     app.listen(port, () => {
+        new Database().connect(process.env.CONNECTION_STRING)
         console.log(`Server running on the ${port}`)
     })
