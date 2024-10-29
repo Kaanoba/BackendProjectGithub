@@ -8,7 +8,8 @@
     // dış tanımlamalar
     const notFound = require('./middlewares/notFound')
 
-
+    // Set
+    app.set('view engine', 'ejs')
 
 
     // hazır middlewareler
